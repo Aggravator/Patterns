@@ -7,9 +7,6 @@ template <class T>
 class Strategy{
 public:
     virtual T algorithm(T a, T b)=0;
-    virtual ~Strategy(){
-        std::cout << "Strategy is deleted!" << std::endl;
-    }
 };
 template <class T>
 class SpecificStrategy1 :public Strategy<T>{

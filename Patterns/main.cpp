@@ -1,5 +1,6 @@
 #include "strategy.h"
 #include "observer.h"
+#include "decorator.h"
 #include <iostream>
 using namespace std;
 void pseudoMain1(){
@@ -18,9 +19,17 @@ void pseudoMain2(){
     subject.registerObserver(&observer2);
     subject.notifyObservers();
 }
+void pseudoMain3(){
+    shared_ptr<ConcreteComponent> cnComponent(new ConcreteComponent());
+    shared_ptr<Decorator> decarator1(new Decorator(string("apple"),cnComponent));
+    shared_ptr<Decorator> decarator2(new Decorator(string("banana"),decarator1));
+    decarator2->operation();
+    cout<<endl;
+}
 
 int main(int argc, char ** argv){
     //pseudoMain1();
-    pseudoMain2();
+    //pseudoMain2();
+    pseudoMain3();
     return 0;
 }
