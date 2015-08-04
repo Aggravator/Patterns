@@ -12,5 +12,8 @@ qtcAddDeployment()
 HEADERS += \
     strategy.h \
     observer.h \
-    decorator.h
+    decorator.h \
+    factorymethod.h \
+    abstractfactory.h \
+    singleton.h
 

@@ -12,7 +12,7 @@ public:
 class ConcreteComponent:public Component{
 public:
     virtual void operation(){
-        std::cout<<"Component";
+        std::cout<<"(Component)";
     }
 };
 
