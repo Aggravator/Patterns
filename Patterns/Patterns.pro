@@ -15,5 +15,6 @@ HEADERS += \
     decorator.h \
     factorymethod.h \
     abstractfactory.h \
-    singleton.h
+    singleton.h \
+    command.h
 

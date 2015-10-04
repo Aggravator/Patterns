@@ -4,6 +4,7 @@
 #include "factorymethod.h"
 #include "abstractfactory.h"
 #include "singleton.h"
+#include "command.h"
 #include <iostream>
 using namespace std;
 
@@ -66,12 +67,21 @@ void pseudoMain5(){
     std::shared_ptr<Singleton> singleton2(Singleton::getInstance());
     cout<<"Singelton2 id:"<<singleton2->getId()<<endl;
 }
+//Command pattern
+void pseudoMain6(){
+    std::shared_ptr<Reciever> recv(new Reciever);
+    std::shared_ptr<ACommand> command(new Command1(recv.get()));
+    command->exec();
+    command.reset(new Command2(recv.get()));
+    command->exec();
+}
 
 int main(int argc, char ** argv){
     //pseudoMain1();
     //pseudoMain2();
     //pseudoMain3();
     //pseudoMain4();
-    pseudoMain5();
+    //pseudoMain5();
+    pseudoMain6();
     return 0;
 }
