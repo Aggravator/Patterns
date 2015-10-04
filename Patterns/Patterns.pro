@@ -16,5 +16,6 @@ HEADERS += \
     factorymethod.h \
     abstractfactory.h \
     singleton.h \
-    command.h
+    command.h \
+    adapter.h
 

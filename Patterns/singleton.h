@@ -20,7 +20,7 @@ public:
         }
         return tempSingleton;
     }
-    static bool destroy(){
+    static void destroy(){
         if(tempSingleton.use_count()==1)tempSingleton.reset();
     }
     int getId(){

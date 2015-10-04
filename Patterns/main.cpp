@@ -5,6 +5,7 @@
 #include "abstractfactory.h"
 #include "singleton.h"
 #include "command.h"
+#include "adapter.h"
 #include <iostream>
 using namespace std;
 
@@ -76,12 +77,19 @@ void pseudoMain6(){
     command->exec();
 }
 
+void pseudoMain7(){
+    std::shared_ptr<Adaptee> adaptee(new Adaptee());
+    std::shared_ptr<Target> target(new Adapter(adaptee.get()));
+    target->request();
+}
+
 int main(int argc, char ** argv){
     //pseudoMain1();
     //pseudoMain2();
     //pseudoMain3();
     //pseudoMain4();
     //pseudoMain5();
-    pseudoMain6();
+    //pseudoMain6();
+    pseudoMain7();
     return 0;
 }
