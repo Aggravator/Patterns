@@ -2,13 +2,11 @@
 #define STRATEGY_H
 #include <memory>
 #include <iostream>
+
 template <class T>
 class Strategy{
 public:
     virtual T algorithm(T a, T b)=0;
-    virtual ~Strategy(){
-        cout << "Strategy is deleted!" << endl;
-    }
 };
 template <class T>
 class SpecificStrategy1 :public Strategy<T>{
